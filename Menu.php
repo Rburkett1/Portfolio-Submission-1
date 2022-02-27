@@ -7,17 +7,29 @@
 
   $Apps = "";
   $Entree = "";
+  $Dessert = "";
 
   $dataEntered = True;
   
-
-  if(($first !== "") && ($last !== "")){
+  if(isset($_COOKIE["CustomerName"])){
+    echo("Welcome back " .$_COOKIE["CustomerName"]."<br>");
+  }
+  elseif(($first !== "") && ($last !== "")){
     // if loggedin variable exists then the user has already logged in successfully
     echo("Welcome " .$first.' '.$last. "!". "<br> <br>"); 
     
+    setcookie("CustomerName" , $first. " " .$last);
   }
   else{
-    echo("Please enter Information in the fields ");
+    echo("Please enter your name <br> ");
+    $dataEntered = False;
+  }
+
+  if(($Mail !== "") && ($Num !== "")){
+    echo("Confirm Infomation <br>" .$Mail.'<br> '.$Num. "<br><br>");
+  }
+  else{
+    echo("Please correct your contact infomation<br>");
     $dataEntered = False;
   }
 
@@ -27,16 +39,18 @@
   if(isset($_POST["Entree"])){
     $Entree = $_POST["Entree"];
   }
+  if(isset($_POST["Dessert"])){
+    $Dessert = $_POST["Dessert"];
+  }
 
-  if (($dataEntered === True) && ($Apps !== "") && ($Entree !== "") && ($Mail !== "") && ($Num !== "")){
-    if (($Apps !== "") && ($Entree !== "")){
-      echo("Confirm Infomation <br>" .$Mail.'<br> '.$Num. "<br><br>");
-      echo("Your selections are:<br>" .$Apps. "<br>" .$Entree. "<br><br>");
-    }
+  if (($dataEntered === True) && ($Apps !== "") && ($Entree !== "") && ($Dessert !=="")){
+    echo("Your selections are:<br>" .$Apps ."<br>" .$Entree. "<br>" .$Dessert. "<br><br>");
   }
   else{
     echo("Please Correct Selections!");
   }
+
+  
 
   
     
