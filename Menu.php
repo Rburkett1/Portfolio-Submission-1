@@ -10,6 +10,8 @@
   $Dessert = "";
 
   $dataEntered = True;
+  $nameChange = False;
+
   // if the cookie is set and the user entered data equals the cookie then the user is returning 
   if((isset($_COOKIE["CustomerName"])) && ($first." " .$last === $_COOKIE["CustomerName"])){
     echo("Welcome back " .$_COOKIE["CustomerName"]."<br><br>");
@@ -17,7 +19,8 @@
   elseif(($first !== "") && ($last !== "")){
     // if loggedin variable exists then the user has already logged in successfully
     echo("Welcome " .$first.' '.$last. "!". "<br> <br>"); 
-    
+    $nameChange = True;
+
     setcookie("CustomerName" , $first. " " .$last);
   }
   else{
@@ -46,7 +49,7 @@
   if (($Apps !== "") && ($Entree !== "") && ($Dessert !=="")){
     echo("Your current selections are:<br>" .$Apps ." for your appetizer<br>" .$Entree. " for your entree<br>" .$Dessert. " for your dessert<br><br>");
 
-    if((isset($_COOKIE["Apps"])) && (isset($_COOKIE["Entree"])) && (isset($_COOKIE["Dessert"]))){
+    if((isset($_COOKIE["Apps"])) && (isset($_COOKIE["Entree"])) && (isset($_COOKIE["Dessert"])) && ($nameChange === false)){
       echo("Your previous selections were:<br>" .$_COOKIE["Apps"] ." for your appetizer<br>" .$_COOKIE["Entree"]. " for your entree<br>" .$_COOKIE["Dessert"]. " for your dessert<br><br>");
     }
     setcookie("Apps", $Apps);
