@@ -61,10 +61,5 @@
   else{
     echo("Please Correct Selections!");
   }
-
-  
-
-  
-    
-    
+      
 ?>
