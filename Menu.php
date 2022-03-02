@@ -30,7 +30,7 @@
   }
 
   if(($Mail !== "") && ($Num !== "")){
-   echo("<b>Confirm Infomation:</b><br>" .$Mail.'<br> '.$Num. "<br><br>");
+   echo("<b>Confirm Infomation:</b><br>" ."Email: ".$Mail.'<br> ' ."Phone Number: ".$Num. "<br><br>");
 
   }
   else{
