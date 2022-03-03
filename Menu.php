@@ -12,14 +12,18 @@
   $dataEntered = True;
   $nameChange = False;
 
+  $AppsPrice = 8;
+  $EntreePrice = 15;
+  $DessertPrice = 7;
+
   // if the cookie is set and the user entered data equals the cookie then the user is returning 
   if((isset($_COOKIE["CustomerName"])) && ($first." " .$last === $_COOKIE["CustomerName"])){
-    echo("Welcome back " .$_COOKIE["CustomerName"]. ". Thanks for ordering again!"."<br><br>");
+    echo("Welcome back, " .$_COOKIE["CustomerName"]. ". Thanks for ordering again!"."<br><br>");
   
   }
   elseif(($first !== "") && ($last !== "")){
     // if loggedin variable exists then the user has already logged in successfully
-    echo("Welcome " .$first.' '.$last. "!". "<br> <br>"); 
+    echo("Thanks for your order, " .$first.' '.$last. "!". "<br> <br>"); 
     $nameChange = True;
 
     setcookie("CustomerName" , $first. " " .$last);
@@ -54,12 +58,27 @@
     if((isset($_COOKIE["Apps"])) && (isset($_COOKIE["Entree"])) && (isset($_COOKIE["Dessert"])) && ($nameChange === false)){
       echo("<b>Your last order with us was:</b><br>" .$_COOKIE["Apps"] ." for your appetizer<br>" .$_COOKIE["Entree"]. " for your entree<br>" .$_COOKIE["Dessert"]. " for your dessert<br><br>");
     }
+    
     setcookie("Apps", $Apps);
     setcookie("Entree", $Entree);
     setcookie("Dessert", $Dessert);
   }
   else{
-    echo("Please Correct Selections!");
+    echo("Please Correct Selections!<br>");
+  }
+
+  if (($Apps !== "") && ($Entree !== "") && ($Dessert !=="") && ($first !== "") && ($last !== "") && ($Mail !== "") && ($Num !== "")){
+  //order number generates random numer
+  echo("<b> Order Refrence Number:</b> <br>");
+  echo("#");
+  echo(rand(1000000,9999999));
+  //displays total price of order
+  echo("<br><b>Total Price:</b> <br>");
+  echo ('$');
+  echo $AppsPrice + $EntreePrice + $DessertPrice;
+  }
+  else{
+    echo("fields must be fixed for order to be placed.");
   }
       
 ?>
