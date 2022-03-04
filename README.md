@@ -3,5 +3,7 @@
 -error message will appear if a field is left blank 
 -once order is placed it will have you review your contact infomation and order 
 -if you are ordering for a second time it will remember you and welcome you back
-and show previous order if first and last name are the same  
+and show previous order   
+-randomized order number
+-shows total price
 Enjoy!

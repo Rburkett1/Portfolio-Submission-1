@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <head>
     <title>Portfolio-1</title>
+    <style>
+        input[type = text]:hover {
+            background-color: lightgrey;
+        }
+    </style>
 </head>
 <body>
     <h1>Online Ordering Submission</h1>
@@ -8,21 +13,21 @@
     <form action="Menu.php" method="POST">
         
         <label>First Name</label><br>
-        <input type="text" placeholder="First Name" name="Fname"><br>
+        <input type="text" placeholder="Enter Here" name="Fname"><br>
         
         <label>Last Name</label><br>
-        <input type="text" placeholder="Last Name" name="Lname"><br>
+        <input type="text" placeholder="Enter Here" name="Lname"><br>
 
         <label>Email</label><br>
-        <input type="text" placeholder="Email" name="Email"><br>
+        <input type="text" placeholder="Enter Here" name="Email"><br>
 
         <label>Phone Number</label><br>
-        <input type="Phone Number" placeholder="Phone Number" name="Pnumber"><br><br>
+        <input type="text" placeholder="Enter Here" name="Pnumber"><br><br>
 
         <h4>Pick Your items</h4>
 
         <!--question one-->
-        <label>Choose an Appetizer $8</label> </br>
+        <label>Choose an appetizer $8</label> </br>
         <!--option 1-->
         <input type="radio" name="Apps"value="Chips and Dip"/>
         <label>Chips and Dip</label></br>
@@ -34,7 +39,7 @@
         <label>Mozzerella Sticks</label></br><br>
 
         <!--question two-->
-        <label>Choose an Entree $15</label> </br>
+        <label>Choose an entree $13</label> </br>
         <!--option 1-->
         <input type="radio" name="Entree" value="Steak"/>
         <label>Steak </label></br>
@@ -46,7 +51,7 @@
         <label>Salmon</label></br></br>
 
         <!--question three-->
-        <label>Choose a Dessert $7</label> </br>
+        <label>Choose a dessert $7</label> </br>
         <!--option 1-->
         <input type="radio" name="Dessert" value="Double Mocca Chocolate Valcano Cake"/>
         <label>Double Mocca Chocolate Valcano Cake</label></br>
